@@ -1,0 +1,21 @@
+{
+  "name": "myweb-test",
+  "version": "1.0.0",
+  "description": "myweb-test",
+  "scripts": {
+    "pw": "playwright-cli",
+    "pw:skills": "playwright-cli install --skills"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dre143232/myweb-test.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dre143232/myweb-test/issues"
+  },
+  "homepage": "https://github.com/dre143232/myweb-test#readme",
+  "devDependencies": {
+    "@playwright/cli": "^0.1.22"
+  }
+}
