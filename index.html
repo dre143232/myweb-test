@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recordatorios</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Recordatorios</h1>
+
+    <form id="reminder-form">
+      <div class="form-row">
+        <input
+          type="text"
+          id="reminder-text"
+          placeholder="¿Qué necesitas recordar?"
+          autocomplete="off"
+          required
+        />
+        <input type="datetime-local" id="reminder-datetime" required />
+        <button type="submit">Agregar</button>
+      </div>
+    </form>
+
+    <div id="filters">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="pending">Pendientes</button>
+      <button class="filter-btn" data-filter="done">Completados</button>
+    </div>
+
+    <ul id="reminder-list"></ul>
+
+    <p id="empty-msg" class="hidden">No hay recordatorios en esta categoría.</p>
+  </div>
+
+  <div id="notification" class="notification hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
