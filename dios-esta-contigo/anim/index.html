@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Dios está contigo en la tormenta</title>
+<script type="importmap">
+{ "imports": { "three": "../node_modules/three/build/three.module.js", "three/addons/": "../node_modules/three/examples/jsm/" } }
+</script>
+<style>
+@font-face { font-family: "Montserrat"; font-weight: 700; src: url("../node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 800; src: url("../node_modules/@fontsource/montserrat/files/montserrat-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 900; src: url("../node_modules/@fontsource/montserrat/files/montserrat-latin-900-normal.woff2") format("woff2"); }
+@font-face { font-family: "Playfair Display"; font-weight: 600; font-style: italic; src: url("../node_modules/@fontsource/playfair-display/files/playfair-display-latin-600-italic.woff2") format("woff2"); }
+@font-face { font-family: "Playfair Display"; font-weight: 700; font-style: normal; src: url("../node_modules/@fontsource/playfair-display/files/playfair-display-latin-700-normal.woff2") format("woff2"); }
+html, body { margin: 0; background: #000; overflow: hidden; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+canvas { position: absolute; inset: 0; display: block; }
+#wash { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+.layer { position: absolute; left: 0; width: 1080px; text-align: center; pointer-events: none; }
+
+/* Subtítulos: dentro de la zona segura de TikTok / Reels / Shorts */
+#subs { top: 1360px; padding: 0 90px; box-sizing: border-box; font: 800 60px/1.22 "Montserrat", sans-serif; color: #fff; letter-spacing: -0.2px;
+  text-shadow: 0 3px 0 rgba(0,0,0,.55), 0 0 22px rgba(0,0,0,.85), 0 0 6px rgba(0,0,0,.9); text-wrap: balance; }
+
+/* Versículo en pantalla */
+#verse { top: 250px; padding: 0 84px; box-sizing: border-box; color: #fff; }
+#verse .ref { font: 800 34px/1 "Montserrat", sans-serif; letter-spacing: 9px; color: #ffd98a; display: flex; align-items: center; justify-content: center; gap: 22px; margin-bottom: 34px;
+  text-shadow: 0 2px 14px rgba(0,0,0,.8); }
+#verse .ref::before, #verse .ref::after { content: ""; width: 110px; height: 2px; background: linear-gradient(90deg, transparent, #ffd98a); }
+#verse .ref::after { transform: scaleX(-1); }
+#verse .txt { font: italic 600 66px/1.24 "Playfair Display", serif; text-shadow: 0 3px 26px rgba(0,0,0,.9), 0 0 8px rgba(0,0,0,.7), 0 0 50px rgba(255,200,110,.35); }
+#verse .txt span { display: block; }
+
+/* Cierre */
+#final { top: 300px; color: #fff; }
+#final .l { font: 900 148px/1.02 "Montserrat", sans-serif; letter-spacing: -3px;
+  text-shadow: 0 6px 0 rgba(20,50,110,.45), 0 10px 40px rgba(10,30,80,.6), 0 0 14px rgba(10,30,80,.35); }
+#final .l2 { display: flex; align-items: center; justify-content: center; gap: 26px; }
+#final svg { width: 132px; height: 132px; filter: drop-shadow(0 8px 22px rgba(120,0,0,.5)); }
+#final .ref { margin-top: 44px; font: 700 62px/1 "Playfair Display", serif; letter-spacing: 12px; color: #fff3cf; display: flex; align-items: center; justify-content: center; gap: 26px;
+  text-shadow: 0 3px 20px rgba(10,30,80,.85), 0 0 6px rgba(10,30,80,.7); }
+#final .ref::before, #final .ref::after { content: ""; width: 120px; height: 3px; background: linear-gradient(90deg, transparent, #fff3cf); }
+#final .ref::after { transform: scaleX(-1); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="c" width="1080" height="1920"></canvas>
+  <div id="wash"></div>
+  <div id="verse" class="layer"><div class="ref">ISAÍAS 43:2</div><div class="txt"></div></div>
+  <div id="final" class="layer">
+    <div class="l l1">DIOS ESTÁ</div>
+    <div class="l l2"><span>CONTIGO</span>
+      <svg viewBox="0 0 100 100"><defs><radialGradient id="hg" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#ff6b6b"/><stop offset="1" stop-color="#d81b2a"/></radialGradient></defs>
+      <path fill="url(#hg)" d="M50 90 C18 66 4 48 4 30 C4 15 15 6 28 6 C38 6 46 12 50 20 C54 12 62 6 72 6 C85 6 96 15 96 30 C96 48 82 66 50 90 Z"/></svg></div>
+    <div class="ref">ISAÍAS 43:2</div>
+  </div>
+  <div id="subs" class="layer"></div>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

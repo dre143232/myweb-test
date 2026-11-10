@@ -1,0 +1,16 @@
+{
+  "name": "dios-esta-contigo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cortometraje animado 3D vertical (60 s) sobre Isaías 43:2",
+  "scripts": {
+    "render": "node render.mjs",
+    "still": "node render.mjs --still"
+  },
+  "dependencies": {
+    "@fontsource/montserrat": "^5.0.0",
+    "@fontsource/playfair-display": "^5.0.0",
+    "three": "0.160.0"
+  }
+}

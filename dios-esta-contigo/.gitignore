@@ -1,0 +1,5 @@
+node_modules/
+frames/
+trabajo/
+*.onnx
+*.onnx.json
