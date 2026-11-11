@@ -11,7 +11,7 @@ Cortometraje cristiano animado en 3D, vertical (1080 × 1920, 60 s, 30 fps), bas
 |---|---|
 | `salida/dios-esta-contigo.mp4` | Video terminado, con narración, música, efectos y subtítulos incrustados. Sin marcas de agua. |
 | `salida/dios-esta-contigo_audio.wav` | Mezcla final de audio (voz + música + efectos). |
-| `salida/musica_original.wav` | La música sola (piano y cuerdas). |
+| `salida/musica_original.m4a` | La música sola (piano y cuerdas). |
 | `salida/portada.jpg` | Fotograma de portada. |
 | `subtitulos/` | Subtítulos `.srt` y `.vtt` sincronizados y `cues.json` con los tiempos exactos de cada frase. |
 | `docs/GUION_Y_STORYBOARD.md` | Guion, storyboard plano a plano y decisiones de dirección. |

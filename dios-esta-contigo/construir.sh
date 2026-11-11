@@ -16,7 +16,7 @@ python3 audio/musica.py "$T"                    # música original, efectos y me
 N=${WORKERS:-4}; PER=$((1800 / N))
 for i in $(seq 0 $((N - 1))); do node render.mjs --from $((i * PER)) --to $(((i + 1) * PER)) --out "$T/frames" & done; wait
 ffmpeg -y -framerate 30 -i "$T/frames/f%05d.jpg" -i "$T/mezcla.wav" \
-  -c:v libx264 -preset slow -crf 17 -profile:v high -pix_fmt yuv420p -color_primaries bt709 -color_trc bt709 -colorspace bt709 \
+  -c:v libx264 -preset slow -crf 21 -maxrate 8M -bufsize 16M -profile:v high -pix_fmt yuv420p -color_primaries bt709 -color_trc bt709 -colorspace bt709 \
   -af "loudnorm=I=-14:TP=-1.5:LRA=11" -c:a aac -b:a 192k -ar 48000 -movflags +faststart -t 60 \
   -metadata title="Dios está contigo en la tormenta" -metadata comment="Isaías 43:2 (RV1909)" \
   salida/dios-esta-contigo.mp4
